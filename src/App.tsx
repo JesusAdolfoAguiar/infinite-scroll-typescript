@@ -1,15 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import loader from './loader.svg';
 import './App.css';
 
 const UnsplashGallery = () => {
-  const [photosArray, setPhotosArray] = useState([]);
+
+  // Types
+  interface Photo {
+    id: string;
+    links: {
+      html: string;
+    }
+    urls: {
+      regular: string;
+    };
+    alt_description: string;
+  }
+
+  const [photosArray, setPhotosArray] = useState<Array<Photo>>([]);
   const [isLoading, setIsLoading] = useState(true); // New state variable for loader
 
   // Unsplash API
   const count = 10;
   const apiKey = 'sRMzWTHYGGMwfzOEhLORigMi6c3mCRr5jycce4wiScc';
   const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
+  const loader = require("./loader.svg") as string;
+
 
   // Create Elements For Links & Photos, Add to DOM
   const displayPhotos = () => {
