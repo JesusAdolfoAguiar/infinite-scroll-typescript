@@ -16,6 +16,15 @@
     "typescript": "^5.2.2",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "fork-ts-checker-webpack-plugin": "^6.5.3"
+  },
+  "overrides": {
+    "@typescript-eslint/typescript-estree": "^5.57.1",
+    "fork-ts-checker-webpack-plugin": "^6.5.3",
+    "typescript": "^5.2.2"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

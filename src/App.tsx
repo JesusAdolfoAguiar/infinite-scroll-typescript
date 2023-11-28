@@ -28,7 +28,7 @@ const UnsplashGallery = () => {
   // Create Elements For Links & Photos, Add to DOM
   const displayPhotos = () => {
     return photosArray.map((photo) => (
-      <a key={photo.id} href={photo.links.html} target="_blank">
+      <a key={photo.id} href={photo.links.html} target="_blank" rel="noreferrer">
         <img
           src={photo.urls.regular}
           alt={photo.alt_description}
@@ -67,10 +67,12 @@ const UnsplashGallery = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     getPhotos();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
